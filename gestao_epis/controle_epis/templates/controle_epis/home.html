@@ -24,6 +24,12 @@
         <section>
             <h2>Funcionalidades</h2>
             <ul>
+                <li>Adicionar Colaborador</li>
+                <form action="{% url 'adicionar_colaborador' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="nome" placeholder="Nome do Colaborador" required>
+                    <button type="submit">Adicionar</button>
+                </form>
                 <li>Cadastro e gerenciamento de EPIs</li>
                 <li>Relatórios detalhados</li>
                 <li>Controle de distribuição</li>
