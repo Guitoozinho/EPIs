@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Cadastrar Colaborador</title></head>
+<body>
+  <h1>Cadastrar Colaborador</h1>
+  {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <label>Nome <input name="nome" required></label><br>
+    <label>CPF <input name="cpf" required></label><br>
+    <label>Matrícula <input name="matricula"></label><br>
+    <label>Cargo <input name="cargo"></label><br>
+    <label>Setor <input name="setor"></label><br>
+    <label>Telefone <input name="telefone"></label><br>
+    <label>Email <input type="email" name="email"></label><br>
+    <label>Tamanho <input name="tamanho"></label><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+</body>
+</html>

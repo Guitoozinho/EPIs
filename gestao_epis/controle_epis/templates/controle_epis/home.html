@@ -1,43 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de EPIs - Home</title>
-    
+  <meta charset="utf-8">
+  <title>Gestão de EPIs - Home</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f5f6fa;margin:0;padding:0}
+    .wrap{max-width:960px;margin:30px auto;background:#fff;padding:22px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.06)}
+    header{background:#5c3bff;color:#fff;padding:16px;border-radius:8px 8px 0 0}
+    .menu{display:flex;gap:12px;margin:18px 0}
+    .menu a{padding:10px 14px;background:#5c3bff;color:#fff;border-radius:8px;text-decoration:none}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo ao Sistema de Gestão de EPIs</h1>
-        <nav>
-            <ul>
-        
-                
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Sobre o Sistema</h2>
-            <p>Este sistema permite gerenciar os Equipamentos de Proteção Individual (EPIs) da sua organização, garantindo controle e segurança.</p>
-        </section>
-        <section>
-            <h2>Funcionalidades</h2>
-            <ul>
-                <li>Adicionar Colaborador</li>
-                <form action="{% url 'adicionar_colaborador' %}" method="post">
-                    {% csrf_token %}
-                    <input type="text" name="nome" placeholder="Nome do Colaborador" required>
-                    <button type="submit">Adicionar</button>
-                </form>
-                <li>Cadastro e gerenciamento de EPIs</li>
-                <li>Relatórios detalhados</li>
-                <li>Controle de distribuição</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Gestão de EPIs. Todos os direitos reservados.</p>
-    </footer>
+  <div class="wrap">
+    <header><h1>Gestão de EPIs</h1></header>
+
+    <p>Use os botões abaixo para navegar.</p>
+
+    <div class="menu">
+      <a href="{% url 'controle_epis:cadastrar_colaborador' %}">Cadastrar Colaborador</a>
+      <a href="{% url 'controle_epis:cadastrar_epi' %}">Cadastrar EPI</a>
+      <a href="{% url 'controle_epis:registrar_entrega' %}">Registrar Entrega</a>
+      <a href="{% url 'controle_epis:lista_colaboradores' %}">Listar Colaboradores</a>
+    </div>
+  </div>
 </body>
 </html>

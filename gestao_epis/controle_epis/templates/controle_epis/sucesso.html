@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Sucesso</title></head>
+<body>
+  {% if tipo == 'colaborador' %}
+    <h1>Colaborador cadastrado com sucesso</h1>
+    <p>Nome: {{ obj.nome }}</p>
+    <p>CPF: {{ obj.cpf }}</p>
+  {% elif tipo == 'entrega' %}
+    <h1>Entrega registrada com sucesso</h1>
+    <p>Colaborador: {{ obj.colaborador.nome }}</p>
+    <p>EPI: {{ obj.nome_epi }} — Qtde: {{ obj.quantidade }}</p>
+    <p>Data: {{ obj.data_entrega }}</p>
+  {% endif %}
+
+  <p><a href="{% url 'controle_epis:home' %}">Voltar</a></p>
+</body>
+</html>
